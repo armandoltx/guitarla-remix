@@ -1,6 +1,7 @@
 
 import { Meta, Links, Outlet } from'@remix-run/react'
-import styles from './styles/index.css'
+import styles from '~/styles/index.css'
+import Header from '~/components/header'
 
 export function meta() {
   // en el momento q la exportas estara disponible y se injecta automaticamente en la ruta
@@ -56,6 +57,7 @@ function Document({children}) {
         <Links />
       </head>
       <body>
+        <Header />
         {children}
       </body>
     </html>
