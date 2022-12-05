@@ -1,4 +1,7 @@
+import { useLoaderData } from '@remix-run/react'
 import { getGuitarras } from '~/models/guitarras.server'
+import Guitarra from '~/components/guitarra'
+
 export async function loader() {
   // en remix no hay q asociarlo, solo exportandolo sabe q es un loader
   // loader se utiliza cuadno el componente carga
@@ -9,14 +12,31 @@ export async function loader() {
   // console.log(resultado)
   // console.log(process.env.API_URL)
   const guitarras = await getGuitarras()
-  console.log(guitarras)
-  return {}
+  // console.log(guitarras)
+  // return guitarras pq guitaras trae tb una cosa q se llama meta q no la necesitamos
+  return guitarras.data
 }
 const Tienda = () => {
-  return (
-    <div>
+  const guitarras = useLoaderData()
 
-    </div>
+  // console.log(guitarras)
+  return (
+    <main className="contenedor">
+      <h2 className="heading">Nuestra Coleccion</h2>
+
+      {guitarras?.length && (
+        <div className="guitarras-grid">
+          {guitarras.map( guitarra => (
+              <Guitarra
+                  key={guitarra?.id}
+                  guitarra={guitarra?.attributes}
+              />
+          ))}
+        </div>
+      )}
+
+    </main>
+
   );
 };
 
