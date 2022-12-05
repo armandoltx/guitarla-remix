@@ -61,7 +61,6 @@ function Document({children}) {
         <Header />
         {children}
         <Footer />
-
         <Scripts />
         <LiveReload />
       </body>
