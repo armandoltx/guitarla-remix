@@ -2,6 +2,7 @@
 import { Meta, Links, Outlet, Scripts, LiveReload } from'@remix-run/react'
 import styles from '~/styles/index.css'
 import Header from '~/components/header'
+import Footer from '~/components/footer'
 
 export function meta() {
   // en el momento q la exportas estara disponible y se injecta automaticamente en la ruta
@@ -59,6 +60,7 @@ function Document({children}) {
       <body>
         <Header />
         {children}
+        <Footer />
 
         <Scripts />
         <LiveReload />
