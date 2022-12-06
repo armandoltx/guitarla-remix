@@ -1,4 +1,5 @@
 import { Link } from '@remix-run/react'
+
 const Guitarra = ({guitarra}) => {
   // console.log(guitarra)
   const { descripcion, imagen, precio, url, nombre } = guitarra
