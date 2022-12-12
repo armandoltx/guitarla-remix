@@ -1,6 +1,6 @@
 import { useLoaderData } from '@remix-run/react'
 import { getPosts } from '~/models/posts.server'
-import Post from '~/components/post'
+import ListadoPosts from '~/components/listado-posts'
 import styles from '~/styles/blog.css'
 
 export function meta() {
@@ -27,20 +27,14 @@ export function links() {
 
 const Blog = () => {
   const posts = useLoaderData()
-  console.log('desde blog')
+  // console.log('desde blog')
   // console.log(posts)
 
   return (
     <main className="contenedor">
-      <h2 className="heading">Bog</h2>
-      <div className="blog">
-        {posts.map(post => (
-          <Post
-            key={post.id}
-            post={post.attributes}
-          />
-        ))}
-      </div>
+      <ListadoPosts
+        posts={posts}
+      />
     </main>
   );
 };
