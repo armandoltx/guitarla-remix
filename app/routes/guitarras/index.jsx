@@ -1,16 +1,6 @@
 import { useLoaderData } from '@remix-run/react'
 import { getGuitarras } from '~/models/guitarras.server'
 import ListadoGuitarras from '~/components/listado-guitarras'
-import styles from '~/styles/guitarras.css'
-
-export function links() {
-  return [
-    {
-      rel: 'stylesheet',
-      href: styles
-    }
-  ]
-}
 
 export async function loader() {
   // en remix no hay q asociarlo, solo exportandolo sabe q es un loader
@@ -31,12 +21,9 @@ const Tienda = () => {
 
   // console.log(guitarras)
   return (
-    <main className="contenedor">
-        <ListadoGuitarras
-          guitarras={guitarras}
-        />
-
-      </main>
+    <ListadoGuitarras
+      guitarras={guitarras}
+    />
   );
 };
 
