@@ -22,7 +22,7 @@ const Carrito = () => {
 
   const { carrito } = useOutletContext()
 
-  console.log("carrito" , carrito)
+  // console.log("carrito" , carrito)
 
   return (
     <main className="contenedor">
@@ -38,6 +38,7 @@ const Carrito = () => {
                 </div>
                 <div>
                   <p className='nombre'>{producto.nombre}</p>
+                  <p>Cantidad: {producto.cantidad}</p>
                   <p className="precio">$ <span>{producto.precio}</span></p>
                   <p className="subtotal">Subtotal: $ <span>{producto.cantidad * producto.precio}</span></p>
                 </div>
