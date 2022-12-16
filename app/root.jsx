@@ -79,7 +79,8 @@ export default function App() {
     <Document>
       <Outlet
         context={{ // sera siempre un objeto
-          agregarCarrito
+          agregarCarrito,
+          carrito
         }}
       />
     </Document>
